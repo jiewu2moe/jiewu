@@ -1,0 +1,35 @@
+<!--pages/post/post-detail/post-detail.wxml-->
+<view class="container">
+  <image class="head-image" src="{{post.postImg}}"></image>
+  <text class="title">{{post.title}}</text>
+  <view class="author-date">
+    <view class="author-box">
+      <image class="avatar" src="{{post.avatar}}"></image>
+      <text class="author">{{post.author}}</text>
+    </view>
+    <text class="date">{{post.dateTime}}</text>
+  </view>
+  <text class="detail">{{post.detail}}</text>
+</view>
+
+<view class="tool">
+  <view class="tool-item" catchtap="onUpTap" data-post-id="{{post.postId}}">
+  <!-->点赞事件<-->
+     <image animation="{{animationUp}}" wx:if="{{post.upStatus}}"       src="/images/icon/wx_app_liked.png" />
+     <image animation="{{animationUp}}" wx:else 
+     src="/images/icon/wx_app_like.png" />
+    <text class='tool-item-Num'>{{post.upNum}}</text>
+  </view>
+  <view class="tool-item comment" catchtap="onCommentTap" data-post-id="{{post.postId}}">
+  <!-->评论事件<-->
+    <image src="/images/icon/wx_app_massage.png"></image>
+    <text class='tool-item-Num'>{{post.commentNum}}</text>
+  </view>
+  <view class="tool-item" catchtap="onCollectionTap" data-post-id="{{post.postId}}">
+    <image wx:if="{{post.collectionStatus}}" src="/images/icon/wx_app_collected.png" />
+    <!-->收藏事件<-->
+    <image wx:else src="/images/icon/wx_app_collect.png" />
+    <text class='tool-item-Num'>{{post.collectionNum}}</text>
+  </view>
+</view>
+

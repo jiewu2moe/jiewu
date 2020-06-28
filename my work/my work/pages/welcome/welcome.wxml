@@ -1,0 +1,7 @@
+<view class='container'>
+    <image class='avatar' src='/images/avatar/CCCccc_.jpg'></image>
+    <text class='motto'>hey CCCccc_!</text>
+    <view catchtap='onTapJump' class='journey-container'>
+      <text class='journey'>To your movies</text>
+    </view>
+</view>

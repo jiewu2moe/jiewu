@@ -1,0 +1,24 @@
+<import src="post-item/post-item-tpl.wxml" />
+<!-->滑动图片<-->
+<view>
+  <view>
+  <swiper catchtap='onSwiperTap' indicator-dots="true"autopalay="true"intreval="5000" >  
+   <swiper-item><image src='/images/post/post-1.jpg'  data-post-id='1'></image></swiper-item>
+  <swiper-item><image src='/images/post/2.png'  data-post-id='2'></image></swiper-item>
+  <swiper-item><image src='/images/post/post-5.jpg'  data-post-id='3'></image></swiper-item>
+  <swiper-item><image src='/images/post/post-2.jpg'  data-post-id='4'></image></swiper-item>
+  <swiper-item><image src='/images/post/4.jpg'   data-post-id='5'></image></swiper-item>
+  </swiper>
+</view>
+<!-->文章渲染<-->
+<block wx:for="{{postList}}" wx:key="key"  wx:for-item="item" wx:for-index="idx">
+  <view catchtap="onTapToDetail" data-post-id="{{item.postId}}">
+    <template  is='postItemTpl' data='{{...item}}'/>
+    </view>
+</block>
+</view>
+
+
+
+
+
